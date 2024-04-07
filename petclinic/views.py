@@ -42,3 +42,20 @@ def create_owner(request):
     form = OwnerForm()
     return render(request, "petclinic/owner_form.html", context={"form":form})
 
+def update_owner(request, pk):
+    obj = Owner.objects.get(pk=pk)
+    if request.method == 'POST':
+        form = OwnerForm(request.POST, instance=obj)
+        if form.is_valid():
+            form.save()
+            return redirect("/owners")
+    form = OwnerForm(instance=obj)
+    return render(request, "petclinic/owner_form.html", context={"form":form})
+
+def delete_owner(request, pk):
+    obj = Owner.objects.get(pk=pk)
+    if request.method == 'POST':
+        obj.delete()
+        return redirect("/owners")
+    return render(request, "petclinic/owner_delete.html", context={"owner":obj})
+

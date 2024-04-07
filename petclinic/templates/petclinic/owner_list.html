@@ -9,6 +9,8 @@
             <th>Last-Name</th>
             <th>email</th>
             <th>Details</th>
+            <th>Update</th>
+            <th>Delete</th>
         </tr>
         {% for obj in objects%}
         <tr>
@@ -16,6 +18,8 @@
             <td>{{obj.last_name}}</td>
             <td>{{obj.email}}</td>
             <td><a href="/owner/{{obj.id}}">Detail</a></td>
+            <td><a href="/owner/update/{{obj.id}}">Update</a></td>
+            <td><a href="/owner/delete/{{obj.id}}">Del</a></td>
         </tr>
         {% endfor %}
     </table>

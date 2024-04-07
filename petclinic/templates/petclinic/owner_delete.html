@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Delete Owner{% endblock %}
+{% block content %}
+<p>Kayıt Silme </p>
+<p>{{owner.name}} {{owner.last_name}} kaydını silmek istediğinizden emin misiniz</p>
+<form method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Delete"/>
+</form>
+{% endblock %}
