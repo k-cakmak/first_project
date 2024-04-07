@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}Owner Detail{% endblock %}
+{% block content %}
+<h1>Owner Details</h1>
+<table>
+    <tr>
+        <td>Name:</td>
+        <td>{{ owner.name }} {{ owner.last_name }}</td>
+    </tr>
+    <tr>
+        <td>mail:</td>
+        <td>{{ owner.email }}</td>
+    </tr>
+    <tr>
+        <td>Phone:</td>
+        <td>{{ owner.phone }}</td>
+    </tr>
+    <tr>
+        <td>Phone:</td>
+        <td>{{ owner.gender }}</td>
+    </tr>
+</table>
+<h3>Pets</h3>
+{% for pet in pets %}
+<ul>
+    <li>{{pet.name}}</li>
+</ul>
+{% empty %}
+<p>evcil hayvan kaydı yoktur</p>
+{% endfor %}
+<a href="/owners/">Owner List</a>
+{% endblock %}

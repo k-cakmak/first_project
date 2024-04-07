@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Create new Owner{% endblock %}
+{% block content %}
+<p>Create New Owner</p>
+<form method="POST">
+{% csrf_token %}
+{{form.as_p}}
+<input type="submit" value="Save"/>
+</form>
+{% endblock %}

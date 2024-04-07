@@ -3,17 +3,19 @@
 {% block content %}
     <h1>Owners</h1>
     {% if objects %}
-    <table>
+    <table class="table table-striped">
         <tr>
             <th>Name</th>
             <th>Last-Name</th>
             <th>email</th>
+            <th>Details</th>
         </tr>
         {% for obj in objects%}
         <tr>
             <td>{{obj.name}}</td>
             <td>{{obj.last_name}}</td>
             <td>{{obj.email}}</td>
+            <td><a href="/owner/{{obj.id}}">Detail</a></td>
         </tr>
         {% endfor %}
     </table>
