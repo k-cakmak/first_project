@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
-{% block title %}Create new Owner{% endblock %}
+{% block title %}Create new Pet{% endblock %}
 {% block content %}
-<p>Create Owner</p>
+<p>Create Pet</p>
 <form method="POST">
 {% csrf_token %}
 {{form.as_p}}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Owner Detail{% endblock %}
+{% block content %}
+<h1>Pet Details</h1>
+<table>
+    <tr>
+        <td>Name:</td>
+        <td>{{ pet.name }}</td>
+    </tr>
+    <tr>
+        <td>Birth Day:</td>
+        <td>{{ pet.birth }}</td>
+    </tr>
+    <tr>
+        <td>Owner:</td>
+        <td>{{ pet.owner }}</td>
+    </tr>
+</table>
+
+<a href="/pet/">Create New Pet</a>
+{% endblock %}

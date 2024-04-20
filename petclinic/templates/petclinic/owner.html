@@ -16,17 +16,18 @@
         <td>{{ owner.phone }}</td>
     </tr>
     <tr>
-        <td>Phone:</td>
+        <td>Gender:</td>
         <td>{{ owner.gender }}</td>
     </tr>
 </table>
 <h3>Pets</h3>
-{% for pet in pets %}
+{% for pet in owner.pet_set.all %}
 <ul>
-    <li>{{pet.name}}</li>
+    <li><a href="/pet/{{pet.id}}">{{pet.name}}</a></li>
 </ul>
 {% empty %}
 <p>evcil hayvan kaydı yoktur</p>
 {% endfor %}
 <a href="/owners/">Owner List</a>
+<a href="/pet/">Create New Pet</a>
 {% endblock %}
